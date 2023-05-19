@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: hsl(241, 100%, 89%);
+    }
+    .container {
+      max-width: 700px;
+      min-width: 600px;
+      height: 500px;
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 30px;
+      box-shadow: 20px 20px 50px hsl(221, 100%, 96%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: auto;
+      position: relative;
+    }
+    .left {
+      background-image: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    .circle {
+      background-image: linear-gradient(hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    .table {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .table > div {
+      width: 250px;
+      height: 55px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+      align-items: center;
+    }
+    .table > div > div {
+      display: flex;
+    }
+    .red {
+      background-color: hsl(0, 100%, 67%, 10%);
+    }
+    .yellow {
+      background-color: hsl(39, 100%, 56%, 10%);
+    }
+    .green {
+      background-color: hsl(166, 100%, 37%, 10%);
+    }
+    .blue {
+      background-color: hsl(234, 85%, 45%, 10%);
+    }
+    .red .color {
+      color: hsl(0, 100%, 67%);
+    }
+    .yellow .color {
+      color: hsl(39, 100%, 56%);
+    }
+    .green .color {
+      color: hsl(166, 100%, 37%);
+    }
+    .blue .color {
+      color: hsl(234, 85%, 45%);
+    }
+    img {
+      margin-right: 5px;
+    }
+    .button {
+      text-decoration: none;
+      color: hsl(221, 100%, 96%);
+      background-color: hsl(224, 30%, 27%);
+      width: 270px;
+      height: 50px;
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-image: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+    }
+    h1,h2,h3,p {
+      margin: 0;
+    }
+    h1,h2 {
+      color: hsl(221, 100%, 96%);
+    }
+    h1 {
+      font-size: 4em;
+      font-weight: 800;
+    }
+    span {
+      color: hsl(224, 30%, 27%);
+    }
+    .right h3 {
+      align-self: self-start;
+      margin-left: 40px;
+    }
+    .left p {
+      padding: 0 50px;
+      text-align: center;
+    }
+    .attribution { font-size: 11px; text-align: center; position: absolute; bottom: -30px; right: 0px;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @media(max-width:450px){
+      body {
+        margin: 0px;
+        font-size: 1rem;
+      }
+      .container {
+        width: 100vw;
+        min-width: 300px;
+        height: 100vh;
+        box-shadow: none;
+        border-radius: none;
+        display: flex;
+        flex-direction: column;
+      }
+      .left {
+      border-radius: 0 0 30px 30px;
+      flex: 1;
+      padding: 2rem;
+      gap: 20px;
+      }
+      .circle {
+        width: 150px;
+        height: 150px;
+      }
+      .right {
+        flex: 1.2;
+        gap: 20px;
+      }
+      .table > div {
+      width: 75vw;
+      height: 55px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+      align-items: center;
+    }
+      .attribution {
+        flex: 0.1;
+      }
+  }
+
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h3>Your Result</h3>
+      <div class="circle">
+        <h1>76</h1>
+        <p>of 100</p>
+      </div>
+      <h2>Great</h2>
+      <p>You scored higher than 65% of the people who have taken these tests.</p>
+    </div>
+    <div class="right">
+      <h3><span>Summary</span></h3>
+      <div class="table">
+        <div class="red">
+          <div>
+            <img src="./assets/images/icon-reaction.svg" alt="Reaction">
+            <p class="color">Reaction</p>
+          </div>
+          <p><span>80</span> / 100</p>
+        </div>
+        <div class="yellow">
+          <div>
+            <img src="./assets/images/icon-memory.svg" alt="Memory">
+            <p class="color">Memory</p>
+          </div>
+          <p><span>92</span> / 100</p>
+        </div>
+        <div class="green">
+          <div>
+            <img src="./assets/images/icon-verbal.svg" alt="Verbal">
+            <p class="color">Verbal</p>
+          </div>
+          <p><span>61</span> / 100</p>
+        </div>
+        <div class="blue">
+          <div>
+            <img src="./assets/images/icon-visual.svg" alt="Visual">
+            <p class="color">Visual</p>
+          </div>
+          <p><span>72</span> / 100</p>
+        </div>
+      </div>
+      <a href="#" class="button">Continue</a>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Chulita</a>.
+    </div>
+  </div>
+  
+
+</body>
+</html>
